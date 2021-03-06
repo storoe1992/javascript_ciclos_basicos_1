@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const opcionUno = () => {
+            let numero = prompt("Ingrese un número del 1 al 100");
+            if(Number.isInteger(+numero.trim()))
+                alert("Inserte un número válido")
+                    else if(numero < 1 || numero > 100)
+                        alert("Inserte un número en el rango de 1 a 100")
+                            else
+                                for(let i = 0;i<=numero;i++)
+                                    console.log(i);
+                        
+        }
+        
+        const opcionDos = () => {
+                let colorDelCaballo;
+                do{
+                    colorDelCaballo = prompt("¿ De qué color es el caballo blanco de Napoleón ?");
+                }while(colorDelCaballo.trim().toUpperCase()!='BLANCO');
+        }
+
+        const opcionTres = () => {
+            let matematica = prompt("¿ Ingrese nota de Matemática ?");
+            let fisica =  prompt("¿ Ingrese nota de Física ?");
+            let ciencias =  prompt("¿ Ingrese nota de Ciencia ?");
+            let promedio = [+matematica,+fisica,+ciencias].reduce( (x,y) => x+y) / 3;
+            let roundPromedio = Math.round(promedio);
+            alert(`El promedio es: ${roundPromedio}`)
+        }
+        
+        const opcionCuatro = () => {
+            let frutas = [];
+            for(let i =0;i<3;i++){
+                let fruta = prompt(`¿ Ingrese Fruta ${i+1} de 3`);
+                frutas.push(fruta);
+            }
+            for(let i = 0;i<frutas.length;i++){
+                if(!(frutas[i].trim().toUpperCase() === 'MANZANA'))
+                    console.log(frutas[i])
+            }
+        }
+
+        const opcionCinco = () => {
+            let nombre = prompt("Escriba su nombre");
+            let cantConsonantes = nombre.match(/[^aeiou]/gi).length;
+            let cantVocales = nombre.match(/[aeiou]/gi).length;
+            alert(`Su nombre tiene: ${cantVocales} vocales y ${cantConsonantes} consonantes`)
+        }
+
+        const main = () => {
+
+        let option = prompt("Inserte un número del 1 al 6");
+        option = option==null ? '' : option.trim();
+        
+        switch(option){
+            case '1': opcionUno();break;
+            case '2': opcionDos();break;
+            case '3': opcionTres();break;
+            case '4': opcionCuatro();break;
+            case '5': opcionCinco();break;
+            case '6': alert('N0 h41 0pc10n 6 3n 3l 9354f10');break;
+            default: alert("Debe seleccionar una opción válida")
+        }
+    }
+
+    main();
+
+        
+    </script>
+</body>
+</html>
